@@ -56,6 +56,7 @@ export class ContextMenuCanvas {
       .style('height', height + 'px')
       .style('left', x + 'px')
       .style('top', y + 'px')
+      .style('z-index',99)
       .style('position', 'absolute')
       .classed('d3-v4-context-menu-container', true)
       .classed('d3-v4-context-menu-group-nested' + group.nestedIndex, true)

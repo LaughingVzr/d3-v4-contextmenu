@@ -6,7 +6,7 @@ http://plnkr.co/edit/i84SdzHnhKwHgZB21lpe?p=info
 
 # Install
 ```
-npm i @atago0129/d3-v4-contextmenu
+npm i d3v4-contextmenu
 ```
 
 # Useage
