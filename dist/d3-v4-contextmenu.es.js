@@ -1,4 +1,4 @@
-import { event, select, selectAll, max } from 'd3';
+import { select, selectAll, max } from 'd3';
 
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -407,7 +407,7 @@ var ContextMenuCanvas = function () {
         return sum + size;
       });
 
-      var container = select('body').append('div').style('width', width + 'px').style('height', height + 'px').style('left', x + 'px').style('top', y + 'px').style('position', 'absolute').classed('d3-v4-context-menu-container', true).classed('d3-v4-context-menu-group-nested' + group.nestedIndex, true).attr('id', group.id);
+      var container = select('body').append('div').style('width', width + 'px').style('height', height + 'px').style('left', x + 'px').style('top', y + 'px').style('z-index', 99).style('position', 'absolute').classed('d3-v4-context-menu-container', true).classed('d3-v4-context-menu-group-nested' + group.nestedIndex, true).attr('id', group.id);
       var g = container.append('svg').attr('width', '100%').attr('height', '100%').attr('x', 0).attr('y', 0).append('g');
       var contextMenu = g.selectAll('rect').data(groupItems);
       var contextItems = contextMenu.enter().append('svg').attr('class', 'item-entry').attr('id', function (item) {
@@ -579,7 +579,7 @@ var D3V4ContextMenu = function () {
 }();
 
 function d3V4Contextmenu (items) {
-  return function (d, i) {
+  return function (d, i, event) {
     event.preventDefault();
     var d3V4ContextMenu = new D3V4ContextMenu(items, d, i, event.target);
     d3V4ContextMenu.show(event.pageX, event.pageY);

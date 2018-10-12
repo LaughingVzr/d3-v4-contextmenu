@@ -120,7 +120,7 @@ npm i d3v4-contextmenu
 ```
 or
 ```ecmascript 6
-import {contextmenu} from "@atago0129/d3-v4-contextmenu";
+import {contextmenu} from "d3v4-contextmenu";
 
 rect.on('contextmenu', contextmenu(items));
 ```
